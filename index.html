@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <style>
+body {
+    
+}
+
+.loader_container{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    background-color:black;
+}
+.loader_sub{
+    height:150px;
+    width:150px;
+    background-color:transparent;
+    margin-top:calc(50vh - 150px);
+    margin-left:calc(50vw - 75px);
+    position:relative;
+}
+.loader_sub > div{
+    height:5px;
+    width:150px;
+    position:absolute;
+    bottom:0;
+    border-radius:50px;
+    animation:animate1 1s ease-out infinite;
+    background:linear-gradient(90deg, transparent ,#8DF3FF);
+    background-repeat:no-repeat;
+}
+.loader_s > div{
+    height:4px !important;
+    width:130px !important;
+}
+#loader_1{
+    transform-origin:50% 50%;
+    transform:rotate(180deg);
+}
+#loader_2{
+    transform:rotate(-60deg);
+    transform-origin:0% 50%;
+}
+#loader_3{
+    transform:rotate(60deg);
+    transform-origin:100% 50%;
+}
+
+@keyframes animate1{
+    0%{
+        background-size:0% 100%;
+    }
+    100%{
+        background-size:100% 100%;
+    }
+    
+}
+.loader_text{
+    height:20px;
+    width:100vw;
+    background-color:none;
+    position:fixed;
+    margin-top:50px;
+    text-align:center;
+    font-size:30px;
+    letter-spacing:5px;
+}
+.loader_text::before{
+    color:white;
+    content:"Loading";
+    animation:animate2 2s infinite;
+}
+
+@keyframes animate2{
+    0%{
+        content:"Loading";
+    }
+    25%{
+        content:"Loading.";
+    }
+    50%{
+        content:"Loading..";
+    }
+    75%{
+        content:"Loading...";
+    }
+    100%{
+        content:"Loading...";
+    }
+    
+}
+        </style>
+    </head>
+    <body>
+        <div class="loader_container">
+            <div class="loader_sub">
+                <div id="loader_1"></div>
+                <div id="loader_2"></div>
+                <div id="loader_3"></div>
+            </div>
+            <div class="loader_text"></div>
+        </div>
+    </body>
+</html>
